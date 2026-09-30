@@ -3,7 +3,6 @@ import Receitas from "./Receitas";
 import Planejamento from "./Planejamento";
 
 export default function App() {
-export default function App() {
  const [pagina, setPagina] = useState("home");
   return (
     <div
