@@ -60,7 +60,7 @@ export default function App() {
       <div
         style={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent:  "center",
           gap: "15px",
           flexWrap: "wrap",
           marginTop: "30px"
