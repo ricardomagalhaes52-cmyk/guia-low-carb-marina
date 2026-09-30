@@ -10,7 +10,7 @@ export default function App() {
       <h1>Guia Low Carb Fácil</h1>
 
       <img
-        src="/marina/marina-home.png"
+       src={marina}
         alt="Marina"
         style={{
           width: "300px",
