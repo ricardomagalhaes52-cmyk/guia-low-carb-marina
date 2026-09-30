@@ -2,32 +2,45 @@ export default function App() {
   return (
     <div
       style={{
-        textAlign: "center",
+        minHeight: "100vh",
+        background: "#f8f4ec",
         padding: "20px",
         fontFamily: "Arial, sans-serif",
-        background: "#f7f1e7",
-        minHeight: "100vh"
+        textAlign: "center"
       }}
     >
 
       <h1
         style={{
-          color: "#173b2b",
-          fontSize: "36px"
+          color: "#245c3a",
+          fontSize: "34px",
+          marginBottom: "10px"
         }}
       >
-        🌿 Guia Low Carb Fácil
+        Guia Low Carb Fácil
       </h1>
 
+      <p
+        style={{
+          fontSize: "18px",
+          color: "#555",
+          maxWidth: "500px",
+          margin: "auto"
+        }}
+      >
+        Receitas práticas, planejamento alimentar e uma jornada
+        mais simples com a Marina.
+      </p>
 
-     <img 
-  src="/marina/marina.png.png"
+
+      <img
+        src="/marina/marina.png.png"
         alt="Marina"
         style={{
-          width: "300px",
+          width: "320px",
           maxWidth: "90%",
-          borderRadius: "20px",
-          marginTop: "20px",
+          borderRadius: "25px",
+          marginTop: "25px",
           boxShadow: "0 10px 30px rgba(0,0,0,0.15)"
         }}
       />
@@ -35,7 +48,7 @@ export default function App() {
 
       <h2
         style={{
-          color: "#173b2b",
+          color: "#245c3a",
           marginTop: "25px"
         }}
       >
@@ -45,88 +58,91 @@ export default function App() {
 
       <p
         style={{
-          fontSize: "18px",
           color: "#444",
-          maxWidth: "500px",
-          margin: "20px auto",
-          lineHeight: "1.6"
+          fontSize: "17px",
+          lineHeight: "1.5"
         }}
       >
-        Vou acompanhar você em uma jornada com receitas low carb
-        práticas, saborosas e fáceis de preparar.
+        Vou acompanhar você com receitas low carb fáceis,
+        saborosas e organizadas para sua rotina.
       </p>
+
+
+      <button
+        style={{
+          background:"#4caf50",
+          color:"white",
+          border:"none",
+          padding:"18px 35px",
+          borderRadius:"30px",
+          fontSize:"18px",
+          fontWeight:"bold",
+          marginTop:"20px",
+          cursor:"pointer"
+        }}
+      >
+        Começar receitas
+      </button>
 
 
       <div
         style={{
-          display: "flex",
-          justifyContent:  "center",
-          gap: "15px",
-          flexWrap: "wrap",
-          marginTop: "30px"
+          display:"grid",
+          gridTemplateColumns:"repeat(3, 1fr)",
+          gap:"15px",
+          marginTop:"35px"
         }}
       >
 
         <div
           style={{
-            background: "#ffffff",
-            padding: "20px",
-            borderRadius: "15px",
-            width: "180px"
+            background:"white",
+            padding:"15px",
+            borderRadius:"15px"
           }}
         >
-          🥑
-          <h3>200 receitas</h3>
-          <p>Receitas práticas</p>
+          🥗
+          <h3>Receitas</h3>
+          <p>200 opções</p>
         </div>
 
 
         <div
           style={{
-            background: "#ffffff",
-            padding: "20px",
-            borderRadius: "15px",
-            width: "180px"
+            background:"white",
+            padding:"15px",
+            borderRadius:"15px"
           }}
         >
-          📅
+          📋
           <h3>Planejamento</h3>
-          <p>Organize sua rotina</p>
+          <p>Organize sua semana</p>
         </div>
 
 
         <div
           style={{
-            background: "#ffffff",
-            padding: "20px",
-            borderRadius: "15px",
-            width: "180px"
+            background:"white",
+            padding:"15px",
+            borderRadius:"15px"
           }}
         >
           🛒
-          <h3>Lista de compras</h3>
-          <p>Mais facilidade</p>
+          <h3>Compras</h3>
+          <p>Lista inteligente</p>
         </div>
 
       </div>
 
 
-      <button
-        style={{
-          marginTop: "35px",
-          background: "#4cff22",
-          border: "none",
-          padding: "18px 40px",
-          borderRadius: "30px",
-          fontSize: "18px",
-          fontWeight: "bold",
-          cursor: "pointer"
-        }}
-      >
-        COMEÇAR MINHA JORNADA
-      </button>
-
-
     </div>
   );
 }
+
+
+   
+
+
+        
+       
+     
