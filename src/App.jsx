@@ -1,3 +1,4 @@
+import marina from "./assets/marina.png";
 export default function App() {
   return (
     <div style={{
