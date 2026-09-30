@@ -99,13 +99,15 @@ export default function App() {
         }}
       >
 
-        <div
-          style={{
-            background:"white",
-            padding:"15px",
-            borderRadius:"15px"
-          }}
-        >
+       <div
+  onClick={() => setPagina("receitas")}
+  style={{
+    background:"white",
+    padding:"15px",
+    borderRadius:"15px",
+    cursor:"pointer"
+  }}
+>
           🥗
           <h3>Receitas</h3>
           <p>200 opções</p>
