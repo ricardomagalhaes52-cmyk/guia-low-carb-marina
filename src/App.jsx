@@ -7,6 +7,9 @@ export default function App() {
   if (pagina === "receitas") {
   return <Receitas />;
 }
+if (pagina === "planejamento") {
+  return <Planejamento />;
+}
  return (
     <div
       style={{
