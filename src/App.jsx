@@ -134,12 +134,14 @@ if (pagina === "planejamento") {
 
 
         <div
-          style={{
-            background:"white",
-            padding:"15px",
-            borderRadius:"15px"
-          }}
-        >
+  onClick={() => setPagina("planejamento")}
+  style={{
+    background:"white",
+    padding:"15px",
+    borderRadius:"15px",
+    cursor:"pointer"
+  }}
+>
           🛒
           <h3>Compras</h3>
           <p>Lista inteligente</p>
