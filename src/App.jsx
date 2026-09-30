@@ -21,7 +21,7 @@ export default function App() {
 
 
       <img
-        src="/marina/marina-home.png"
+        src="/marina/marina.png.png"
         alt="Marina"
         style={{
           width: "300px",
