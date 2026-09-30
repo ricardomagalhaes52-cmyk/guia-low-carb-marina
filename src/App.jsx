@@ -4,7 +4,10 @@ import Planejamento from "./Planejamento";
 
 export default function App() {
  const [pagina, setPagina] = useState("home");
-  return (
+  if (pagina === "receitas") {
+  return <Receitas />;
+}
+ return (
     <div
       style={{
         minHeight: "100vh",
