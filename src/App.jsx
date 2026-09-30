@@ -20,8 +20,8 @@ export default function App() {
       </h1>
 
 
-      <img
-        src="/marina/marina.png.png"
+     <img 
+  src="/público/marina/marina.png.png"
         alt="Marina"
         style={{
           width: "300px",
