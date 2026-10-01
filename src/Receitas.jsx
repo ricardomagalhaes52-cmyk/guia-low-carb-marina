@@ -1,4 +1,16 @@
-    export default function Receitas() {
+import ReceitaDetalhe from "./ReceitaDetalhe";
+import { useState } from "react";
+
+export default function Receitas() {
+
+  const [receitaAberta, setReceitaAberta] = useState(false);
+
+
+  if (receitaAberta) {
+    return <ReceitaDetalhe />;
+  }
+
+
   const categorias = [
     {
       emoji: "☕",
@@ -18,12 +30,12 @@
     {
       emoji: "🍎",
       nome: "Lanches",
-      descricao: "Receitas rápidas e nutritivas"
+      descricao: "Receitas rápidas"
     },
     {
       emoji: "🍰",
       nome: "Sobremesas",
-      descricao: "Doces low carb deliciosos"
+      descricao: "Doces low carb"
     }
   ];
 
@@ -34,15 +46,14 @@
         minHeight:"100vh",
         background:"#f8f4ec",
         padding:"20px",
-        fontFamily:"Arial, sans-serif",
-        textAlign:"center"
+        fontFamily:"Arial, sans-serif"
       }}
     >
 
       <h1
         style={{
           color:"#245c3a",
-          fontSize:"32px"
+          textAlign:"center"
         }}
       >
         🥗 Receitas Low Carb
@@ -51,74 +62,90 @@
 
       <p
         style={{
-          color:"#555",
-          fontSize:"17px"
+          textAlign:"center"
         }}
       >
-        Escolha uma categoria e descubra receitas fáceis
-        para sua rotina.
+        Escolha uma categoria ou veja uma receita.
       </p>
 
 
       <div
         style={{
-          display:"grid",
-          gap:"18px",
-          marginTop:"30px"
+          background:"white",
+          padding:"20px",
+          borderRadius:"20px",
+          marginTop:"25px"
         }}
       >
 
-        {categorias.map((item) => (
-          <div
-            key={item.nome}
-            style={{
-              background:"white",
-              padding:"20px",
-              borderRadius:"20px",
-              boxShadow:"0 5px 15px rgba(0,0,0,0.08)",
-              cursor:"pointer"
-            }}
-          >
+        <h2>
+          🍳 Omelete Cremoso Low Carb
+        </h2>
 
-            <div
-              style={{
-                fontSize:"35px"
-              }}
-            >
-              {item.emoji}
-            </div>
+        <p>
+          ⏱ 10 minutos
+        </p>
+
+        <p>
+          Uma receita prática para qualquer momento do dia.
+        </p>
 
 
-            <h2
-              style={{
-                color:"#245c3a",
-                margin:"10px"
-              }}
-            >
-              {item.nome}
-            </h2>
+        <button
+          onClick={() => setReceitaAberta(true)}
+          style={{
+            background:"#45c451",
+            color:"white",
+            border:"none",
+            padding:"12px 25px",
+            borderRadius:"25px",
+            cursor:"pointer"
+          }}
+        >
+          Ver receita
+        </button>
+
+      </div>
 
 
-            <p>
-              {item.descricao}
-            </p>
+
+      <h2
+        style={{
+          color:"#245c3a",
+          marginTop:"30px"
+        }}
+      >
+        Categorias
+      </h2>
 
 
-            <button
-              style={{
-                background:"#45c451",
-                color:"white",
-                border:"none",
-                padding:"12px 25px",
-                borderRadius:"25px",
-                cursor:"pointer"
-              }}
-            >
-              Ver receitas
-            </button>
+      <div
+        style={{
+          display:"grid",
+          gap:"15px"
+        }}
+      >
 
-          </div>
-        ))}
+      {categorias.map((item)=>(
+        <div
+          key={item.nome}
+          style={{
+            background:"white",
+            padding:"18px",
+            borderRadius:"18px"
+          }}
+        >
+
+          <h2>
+            {item.emoji} {item.nome}
+          </h2>
+
+          <p>
+            {item.descricao}
+          </p>
+
+        </div>
+      ))}
 
       </div>
 
