@@ -134,7 +134,7 @@ if (pagina === "planejamento") {
 
 
         <div
-  onClick={() => setPagina("planejamento")}
+ onClick={() => setPagina("compras")}
   style={{
     background:"white",
     padding:"15px",
