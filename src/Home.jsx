@@ -14,188 +14,182 @@ export default function Home() {
     <div
       style={{
         minHeight: "100vh",
-        backgroundColor: "#F9F8F6",
+        backgroundColor: "#2D5A27",
         padding: "20px",
-        paddingBottom: "90px",
-        fontFamily: "Inter, sans-serif"
+        paddingBottom: "110px",
+        fontFamily: "Inter, sans-serif",
+        color: "#FFFFFF",
+        textAlign: "center"
       }}
     >
-      {/* CABEÇALHO */}
-      <header style={{ marginBottom: "20px" }}>
+      {/* CABEÇALHO DO GUIA */}
+      <header style={{ paddingTop: "10px", marginBottom: "20px" }}>
         <h1
           style={{
             fontFamily: "Poppins, sans-serif",
-            color: "#2C2C2C",
-            fontSize: "26px",
-            marginBottom: "8px"
+            fontSize: "32px",
+            fontWeight: "bold",
+            color: "#FFFFFF",
+            marginBottom: "4px",
+            letterSpacing: "-0.5px"
           }}
         >
-          Olá, que bom ter você aqui! 🌿
+          Guia <span style={{ color: "#A3D98E" }}>LowCarb</span>
         </h1>
-        <p style={{ color: "#666666", fontSize: "15px" }}>
-          Vamos preparar algo delicioso hoje?
+        <p
+          style={{
+            fontSize: "13px",
+            opacity: 0.9,
+            maxWidth: "280px",
+            margin: "0 auto",
+            lineHeight: "1.4"
+          }}
+        >
+          Receitas saudáveis, mais sabor e qualidade de vida
         </p>
       </header>
 
-      {/* FOTO PRINCIPAL: Marina com o prato pronto */}
+      {/* BLOCO DE DESTAQUE: 100 RECEITAS E PRATO PRINCIPAL */}
       <div
         style={{
-          borderRadius: "18px",
+          backgroundColor: "#FFFFFF",
+          borderRadius: "24px",
           overflow: "hidden",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
+          color: "#2C2C2C",
+          boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
           marginBottom: "24px",
-          backgroundColor: "#FFFFFF"
+          textAlign: "left"
         }}
       >
-        <img
-          src="/marina/marina-principal.jpg"
-          alt="Marina Low Carb"
-          style={{
-            width: "100%",
-            height: "220px",
-            objectFit: "cover",
-            display: "block"
-          }}
-        />
-        <div style={{ padding: "16px" }}>
+        {/* Selo e Título do Destaque */}
+        <div style={{ padding: "20px 20px 10px 20px", textAlign: "center" }}>
+          <span
+            style={{
+              backgroundColor: "#2D5A27",
+              color: "#FFFFFF",
+              fontSize: "12px",
+              fontWeight: "bold",
+              padding: "6px 14px",
+              borderRadius: "20px",
+              display: "inline-block",
+              marginBottom: "12px"
+            }}
+          >
+            100 RECEITAS FUNCIONAIS
+          </span>
+        </div>
+
+        {/* Imagem do Prato Principal (marina-principal.jpg) */}
+        <div style={{ width: "100%", height: "200px", overflow: "hidden" }}>
+          <img
+            src="/marina/marina-principal.jpg"
+            alt="Prato Principal Low Carb"
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block"
+            }}
+          />
+        </div>
+
+        <div style={{ padding: "16px 20px" }}>
           <strong style={{ fontFamily: "Poppins, sans-serif", fontSize: "16px", color: "#2D5A27" }}>
-            Receita do Dia com a Marina
+            Especial do Dia com a Marina
           </strong>
-          <p style={{ color: "#666666", fontSize: "14px", marginTop: "4px" }}>
-            Feita com carinho para manter a sua rotina leve e saborosa.
+          <p style={{ color: "#666666", fontSize: "13px", marginTop: "4px" }}>
+            Pratos desenvolvidos para nutrir o seu corpo com sabor e leveza.
           </p>
         </div>
       </div>
 
-      {/* SEÇÃO PLANEAMENTO: Marina com o caderno */}
-      <section
-        style={{
-          backgroundColor: "#2D5A27",
-          borderRadius: "18px",
-          padding: "20px",
-          color: "#FFFFFF",
-          display: "flex",
-          alignItems: "center",
-          gap: "16px"
-        }}
-      >
-        <img
-          src="/marina/marina-caderno.jpg"
-          alt="Marina Planejando"
-          style={{
-            width: "80px",
-            height: "80px",
-            borderRadius: "50%",
-            objectFit: "cover",
-            border: "2px solid #FFFFFF"
-          }}
-        />
-        <div>
-          <h2
-            style={{
-              fontFamily: "Poppins, sans-serif",
-              fontSize: "18px",
-              marginBottom: "6px"
-            }}
-          >
-            Planeamento & Rotina ⭐
-          </h2>
-          <p style={{ fontSize: "13px", opacity: 0.9 }}>
-            Receitas fáceis e organizadas para o seu dia a dia.
-          </p>
-        </div>
-      </section>
-
-      {/* SEÇÃO DE CATEGORIAS */}
-      <section style={{ marginTop: "28px" }}>
+      {/* SECÇÃO DE CATEGORIAS Rápidas */}
+      <section style={{ textAlign: "left", marginBottom: "24px" }}>
         <h2
           style={{
             fontFamily: "Poppins, sans-serif",
-            fontSize: "20px",
-            marginBottom: "15px"
+            fontSize: "18px",
+            marginBottom: "12px",
+            color: "#FFFFFF"
           }}
         >
-          Encontre por categoria
+          Explorar Categorias
         </h2>
 
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "12px"
+            gridTemplateColumns: "repeat(3, 1fr)",
+            gap: "10px"
           }}
         >
-          {categorias.map((categoria) => (
+          {categorias.slice(0, 3).map((categoria) => (
             <div
               key={categoria.nome}
               style={{
-                backgroundColor: "#FFFFFF",
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                backdropFilter: "blur(5px)",
                 borderRadius: "16px",
-                padding: "18px",
+                padding: "14px 8px",
                 textAlign: "center",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.04)"
+                border: "1px solid rgba(255, 255, 255, 0.15)"
               }}
             >
-              <div style={{ fontSize: "30px", marginBottom: "8px" }}>
+              <div style={{ fontSize: "24px", marginBottom: "6px" }}>
                 {categoria.emoji}
               </div>
-              <strong
+              <span
                 style={{
-                  fontFamily: "Poppins, sans-serif",
-                  fontSize: "14px",
-                  color: "#2C2C2C"
+                  fontSize: "12px",
+                  fontWeight: "500",
+                  color: "#FFFFFF"
                 }}
               >
                 {categoria.nome}
-              </strong>
+              </span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* SEÇÃO RÁPIDAS: Marina a cortar legumes */}
-      <section style={{ marginTop: "28px" }}>
-        <h2
-          style={{
-            fontFamily: "Poppins, sans-serif",
-            fontSize: "20px",
-            marginBottom: "15px"
-          }}
-        >
-          Prontas em poucos minutos ⏱
-        </h2>
-
-        <div
-          style={{
-            backgroundColor: "#FFFFFF",
-            borderRadius: "16px",
-            padding: "16px",
-            display: "flex",
-            alignItems: "center",
-            gap: "14px",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.04)"
-          }}
-        >
-          <img
-            src="/marina/marina-cortando.jpg"
-            alt="Marina Cozinhando"
-            style={{
-              width: "70px",
-              height: "70px",
-              borderRadius: "12px",
-              objectFit: "cover"
-            }}
-          />
-          <div>
-            <strong style={{ fontFamily: "Poppins, sans-serif", fontSize: "15px", color: "#2C2C2C" }}>
-              Receitas rápidas da Marina
-            </strong>
-            <p style={{ color: "#666666", fontSize: "13px", marginTop: "4px" }}>
-              Opções práticas para quando o tempo está curto.
-            </p>
-          </div>
+      {/* MENU INFERIOR FIXO (Inspirado na referência) */}
+      <div
+        style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          backgroundColor: "#1E3D1A",
+          padding: "12px 10px",
+          display: "flex",
+          justifyContent: "space-around",
+          alignItems: "center",
+          borderTop: "1px solid rgba(255,255,255,0.1)",
+          boxShadow: "0 -4px 15px rgba(0,0,0,0.2)",
+          zIndex: 100
+        }}
+      >
+        <div style={{ textAlign: "center", cursor: "pointer", opacity: 1 }}>
+          <div style={{ fontSize: "18px" }}>🍽️</div>
+          <span style={{ fontSize: "10px", color: "#FFFFFF", display: "block", marginTop: "2px" }}>
+            RECEITAS LOW CARB
+          </span>
         </div>
-      </section>
+
+        <div style={{ textAlign: "center", cursor: "pointer", opacity: 0.8 }}>
+          <div style={{ fontSize: "18px" }}>🌿</div>
+          <span style={{ fontSize: "10px", color: "#FFFFFF", display: "block", marginTop: "2px" }}>
+            SAÚDE E BEM-ESTAR
+          </span>
+        </div>
+
+        <div style={{ textAlign: "center", cursor: "pointer", opacity: 0.8 }}>
+          <div style={{ fontSize: "18px" }}>💚</div>
+          <span style={{ fontSize: "10px", color: "#FFFFFF", display: "block", marginTop: "2px" }}>
+            ENERGIA PARA O DIA
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
