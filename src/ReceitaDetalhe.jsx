@@ -1,19 +1,18 @@
-export default function ReceitaDetalhe() {
+export default function ReceitaDetalhe({ receita }) {
 
-  const ingredientes = [
-    "2 ovos",
-    "Queijo muçarela",
-    "Tomate picado",
-    "Temperos a gosto"
-  ];
-
-
-  const preparo = [
-    "Bata os ovos em um recipiente.",
-    "Adicione o queijo e os ingredientes.",
-    "Cozinhe em fogo baixo até dourar.",
-    "Sirva e aproveite."
-  ];
+  if (!receita) {
+    return (
+      <div
+        style={{
+          padding:"30px",
+          textAlign:"center",
+          fontFamily:"Arial"
+        }}
+      >
+        Receita não encontrada.
+      </div>
+    );
+  }
 
 
   return (
@@ -32,15 +31,15 @@ export default function ReceitaDetalhe() {
           textAlign:"center"
         }}
       >
-        🍳 Omelete Low Carb
+        🍽️ {receita.nome}
       </h1>
 
 
       <div
         style={{
           background:"white",
-          borderRadius:"20px",
           padding:"20px",
+          borderRadius:"20px",
           boxShadow:"0 5px 15px rgba(0,0,0,0.08)"
         }}
       >
@@ -51,22 +50,29 @@ export default function ReceitaDetalhe() {
             background:"#eee",
             borderRadius:"15px",
             display:"flex",
-            alignItems:"center",
             justifyContent:"center",
+            alignItems:"center",
             fontSize:"60px"
           }}
         >
-          🍳
+          🥗
         </div>
 
 
         <h2>
-          Omelete Cremoso Low Carb
+          Informações
         </h2>
 
+        <p>
+          📂 Categoria: {receita.categoria}
+        </p>
 
         <p>
-          ⏱ Tempo de preparo: 10 minutos
+          ⏱ Tempo de preparo: {receita.tempo}
+        </p>
+
+        <p>
+          {receita.descricao}
         </p>
 
 
@@ -77,7 +83,7 @@ export default function ReceitaDetalhe() {
           🛒 Ingredientes
         </h2>
 
-        {ingredientes.map((item) => (
+        {receita.ingredientes.map((item) => (
           <p key={item}>
             ✅ {item}
           </p>
@@ -91,9 +97,9 @@ export default function ReceitaDetalhe() {
           👩‍🍳 Modo de preparo
         </h2>
 
-        {preparo.map((item, index) => (
-          <p key={item}>
-            {index + 1}. {item}
+        {receita.preparo.map((passo, index) => (
+          <p key={passo}>
+            {index + 1}. {passo}
           </p>
         ))}
 
@@ -101,13 +107,13 @@ export default function ReceitaDetalhe() {
         <button
           style={{
             width:"100%",
+            marginTop:"20px",
             background:"#45c451",
             color:"white",
             border:"none",
             padding:"15px",
             borderRadius:"25px",
             fontSize:"17px",
-            marginTop:"20px",
             cursor:"pointer"
           }}
         >
