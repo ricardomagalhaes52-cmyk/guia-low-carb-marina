@@ -105,8 +105,8 @@ if (pagina === "planejamento") {
         }}
       >
 
-       <div
-  onClick={() => setPagina("receitas")}
+      <div
+  onClick={() => setPagina("planejamento")}
   style={{
     background:"white",
     padding:"15px",
