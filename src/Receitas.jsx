@@ -1,222 +1,122 @@
 import { useState } from "react";
-import receitas from "./receitasData";
+import { receitasData } from "./receitasData";
 import ReceitaDetalhe from "./ReceitaDetalhe";
 
 export default function Receitas() {
-
   const [receitaSelecionada, setReceitaSelecionada] = useState(null);
   const [busca, setBusca] = useState("");
-
 
   if (receitaSelecionada) {
     return (
       <ReceitaDetalhe 
         receita={receitaSelecionada} 
+        onVoltar={() => setReceitaSelecionada(null)}
       />
     );
   }
 
-
-  const receitasFiltradas = receitas.filter((receita) =>
-    receita.nome
+  // Corrigido para procurar por 'titulo' (que está no receitasData)
+  const receitasFiltradas = receitasData.filter((receita) =>
+    receita.titulo
       .toLowerCase()
       .includes(busca.toLowerCase())
   );
 
-
   return (
-
     <div
       style={{
-        minHeight:"100vh",
-        background:"#F9F8F6",
-        padding:"20px",
-        paddingBottom:"90px",
-        fontFamily:"Inter, sans-serif"
+        minHeight: "100vh",
+        backgroundColor: "#F4F1EA",
+        padding: "16px",
+        paddingBottom: "100px",
+        fontFamily: "Inter, sans-serif",
+        maxWidth: "480px",
+        margin: "0 auto"
       }}
     >
-
-
       <h1
         style={{
-          color:"#2C2C2C",
-          textAlign:"center",
-          fontFamily:"Poppins, sans-serif",
-          fontSize:"28px"
+          color: "#2C2C2C",
+          textAlign: "center",
+          fontFamily: "Poppins, sans-serif",
+          fontSize: "22px",
+          marginBottom: "4px"
         }}
       >
         🥗 Receitas Marina Low Carb
       </h1>
 
-
       <p
         style={{
-          textAlign:"center",
-          color:"#666",
-          marginBottom:"20px"
+          textAlign: "center",
+          color: "#666",
+          fontSize: "12px",
+          marginBottom: "16px"
         }}
       >
         Escolha uma receita fácil e saborosa para hoje.
       </p>
 
-
-
       <input
-
         type="text"
-
         placeholder="🔍 Buscar receita..."
-
         value={busca}
-
-        onChange={(e)=>setBusca(e.target.value)}
-
+        onChange={(e) => setBusca(e.target.value)}
         style={{
-
-          width:"100%",
-
-          padding:"14px",
-
-          borderRadius:"14px",
-
-          border:"1px solid #ddd",
-
-          fontSize:"15px",
-
-          marginBottom:"25px",
-
-          outline:"none"
-
+          width: "100%",
+          padding: "12px 14px",
+          borderRadius: "14px",
+          border: "1px solid #ddd",
+          fontSize: "14px",
+          marginBottom: "16px",
+          outline: "none",
+          backgroundColor: "#FFFFFF",
+          boxSizing: "border-box"
         }}
-
       />
-
-
 
       <div
         style={{
-          display:"grid",
-          gap:"18px"
+          display: "flex",
+          flexDirection: "column",
+          gap: "12px"
         }}
       >
-
-
-        {receitasFiltradas.map((receita)=>(
-
-
+        {receitasFiltradas.map((receita) => (
           <div
-
             key={receita.id}
-
+            onClick={() => setReceitaSelecionada(receita)} // TORNA O CARTÃO CLICÁVEL
             style={{
-
-              background:"#FFFFFF",
-
-              borderRadius:"16px",
-
-              padding:"18px",
-
-              boxShadow:"0 4px 12px rgba(0,0,0,0.05)"
-
+              backgroundColor: "#FFFFFF",
+              borderRadius: "16px",
+              padding: "12px",
+              display: "flex",
+              gap: "12px",
+              alignItems: "center",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.04)",
+              cursor: "pointer"
             }}
-
           >
-
-
-
-            <h2
-
-              style={{
-
-                color:"#2D5A27",
-
-                fontFamily:"Poppins, sans-serif",
-
-                fontSize:"20px"
-
-              }}
-
-            >
-
-              🍽️ {receita.nome}
-
-            </h2>
-
-
-
-
-            <p style={{color:"#666"}}>
-
-              📂 {receita.categoria}
-
-            </p>
-
-
-
-            <p style={{color:"#666"}}>
-
-              ⏱️ {receita.tempo}
-
-            </p>
-
-
-
-            <p>
-
-              {receita.descricao}
-
-            </p>
-
-
-
-
-            <button
-
-              onClick={() => setReceitaSelecionada(receita)}
-
-              style={{
-
-                background:"#2D5A27",
-
-                color:"#FFFFFF",
-
-                border:"none",
-
-                padding:"12px 25px",
-
-                borderRadius:"12px",
-
-                cursor:"pointer",
-
-                fontFamily:"Poppins, sans-serif",
-
-                fontWeight:"600",
-
-                width:"100%"
-
-              }}
-
-            >
-
-              Ver receita 🍳
-
-            </button>
-
-
-
+            <img
+              src={receita.foto || "/marina/marina-principal.jpg"}
+              alt={receita.titulo}
+              style={{ width: "70px", height: "70px", borderRadius: "12px", objectFit: "cover" }}
+            />
+            <div style={{ flex: 1 }}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "4px" }}>
+                <span style={{ fontSize: "10px", backgroundColor: "#E8F5E9", color: "#2E7D32", padding: "2px 6px", borderRadius: "6px", fontWeight: "bold" }}>
+                  {receita.categoria}
+                </span>
+                <span style={{ fontSize: "11px", color: "#D35400", fontWeight: "bold" }}>⏱ {receita.tempo}</span>
+              </div>
+              <h3 style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px", color: "#2C2C2C", margin: "0 0 4px 0", lineHeight: "1.2" }}>
+                {receita.titulo}
+              </h3>
+              <span style={{ fontSize: "11px", color: "#888888" }}>🔥 {receita.calorias}</span>
+            </div>
           </div>
-
-
         ))}
-
-
-
       </div>
-
-
-
     </div>
-
   );
-
 }
