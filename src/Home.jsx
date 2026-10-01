@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Home() {
-  const [receitaAtiva, setReceitaAtiva] = useState(null);
-
   const receitasDestaque = [
     {
       id: 1,
@@ -12,12 +10,12 @@ export default function Home() {
       ingredientes: [
         "1 filé de peito de frango",
         "Mix de folhas verdes (rúcula e alface)",
-        "Tomates-ceraja e abacate em fatias",
+        "Tomates-cereja e abacate em fatias",
         "Azeite extravirgem, limão, sal e pimenta a gosto"
       ],
       modoPreparo: [
         "Tempere o filé de frango com sal, pimenta e um fio de azeite.",
-        "Grelhe em frigreideira antiaderente até dourar por completo de ambos os lados.",
+        "Grelhe em frigideira antiaderente até dourar por completo de ambos os lados.",
         "Monte o prato com a base de folhas verdes, os tomates, o abacate fatiado e o frango fatiado por cima.",
         "Finalize regando com azeite e sumo de limão."
       ]
@@ -69,43 +67,68 @@ export default function Home() {
         </p>
       </header>
 
-      {/* DESTAQUE PRINCIPAL (Com a imagem inteira sem cortes) */}
+      {/* DESTAQUE PRINCIPAL (Com fundo a condizer e imagem preenchendo elegantemente) */}
       <div
         style={{
-          backgroundColor: "#FFFFFF",
-          borderRadius: "18px",
+          backgroundColor: "#2D5A27",
+          borderRadius: "20px",
           overflow: "hidden",
-          boxShadow: "0 4px 12px rgba(0,0,0,0.06)",
-          marginBottom: "24px"
+          boxShadow: "0 6px 16px rgba(0,0,0,0.1)",
+          marginBottom: "24px",
+          color: "#FFFFFF",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          padding: "20px"
         }}
       >
-        <div style={{ width: "100%", maxHeight: "320px", backgroundColor: "#EFECE6", display: "flex", justifyContent: "center" }}>
+        <div
+          style={{
+            width: "100%",
+            maxWidth: "280px",
+            borderRadius: "14px",
+            overflow: "hidden",
+            marginBottom: "16px",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.2)"
+          }}
+        >
           <img
             src="/marina/marina-principal.jpg"
             alt="Marina Low Carb"
             style={{
               width: "100%",
               height: "auto",
-              maxHeight: "320px",
-              objectFit: "contain",
               display: "block"
             }}
           />
         </div>
-        <div style={{ padding: "18px" }}>
-          <span style={{ backgroundColor: "#E8F5E9", color: "#2E7D32", fontSize: "11px", fontWeight: "bold", padding: "4px 10px", borderRadius: "10px" }}>
+
+        <div>
+          <span
+            style={{
+              backgroundColor: "#A3D98E",
+              color: "#1E3D1A",
+              fontSize: "11px",
+              fontWeight: "bold",
+              padding: "4px 12px",
+              borderRadius: "10px",
+              display: "inline-block",
+              marginBottom: "8px"
+            }}
+          >
             DESTAQUE DO DIA
           </span>
-          <h3 style={{ fontFamily: "Poppins, sans-serif", fontSize: "18px", color: "#2D5A27", marginTop: "8px" }}>
+          <h3 style={{ fontFamily: "Poppins, sans-serif", fontSize: "20px", marginBottom: "6px" }}>
             Receita Saudável com a Marina
           </h3>
-          <p style={{ color: "#666666", fontSize: "13px", marginTop: "4px" }}>
+          <p style={{ fontSize: "13px", opacity: 0.9, maxWidth: "300px", margin: "0 auto" }}>
             Feita com carinho para manter a sua rotina leve, nutritiva e saborosa.
           </p>
         </div>
       </div>
 
-      {/* LISTA DE RECEITAS COM INGREDIENTES E MODO DE PREPARO DETALHADOS */}
+      {/* LISTA DE RECEITAS COM INGREDIENTES E MODO DE PREPARO */}
       <section style={{ marginTop: "24px" }}>
         <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: "20px", marginBottom: "15px", color: "#2C2C2C" }}>
           Sugestões Práticas 🍳
