@@ -1,100 +1,62 @@
-const receitas = [
+export const receitasData = [
   {
     id: 1,
-    nome: "Omelete Cremoso Low Carb",
-    categoria: "Café da manhã",
-    tempo: "10 minutos",
-    descricao: "Uma opção prática e saborosa para começar o dia.",
+    titulo: "Frango Dourado com Salada Fresca",
+    categoria: "Almoço/Jantar",
+    tempo: "20 mins",
+    calorias: "320 kcal",
+    foto: "/marina/marina-principal.jpg",
     ingredientes: [
-      "2 ovos",
-      "Queijo muçarela",
-      "Tomate",
-      "Temperos"
+      "1 filé de peito de frango",
+      "Mix de folhas verdes (rúcula e alface)",
+      "Tomates-cereja e abacate em fatias",
+      "Azeite extravirgem, limão, sal e pimenta a gosto"
     ],
-    preparo: [
-      "Bata os ovos",
-      "Misture os ingredientes",
-      "Cozinhe até dourar"
+    modoPreparo: [
+      "Tempere o filé de frango com sal, pimenta e um fio de azeite.",
+      "Grelhe em frigideira antiaderente até dourar por completo de ambos os lados.",
+      "Monte o prato com a base de folhas verdes, os tomates, o abacate fatiado e o frango fatiado por cima.",
+      "Finalize regando com azeite e sumo de limão."
     ]
   },
-
-
   {
     id: 2,
-    nome: "Frango com Legumes",
-    categoria: "Almoço",
-    tempo: "30 minutos",
-    descricao: "Prato completo com proteína e vegetais.",
+    titulo: "Omelete Recheada da Marina",
+    categoria: "Café da Manhã",
+    tempo: "10 mins",
+    calorias: "210 kcal",
+    foto: "/marina/marina-prato.jpg",
     ingredientes: [
-      "Frango",
-      "Brócolis",
-      "Abobrinha",
-      "Temperos"
+      "2 ovos inteiros",
+      "Espinafres frescos picados",
+      "Queijo minas curado ralado",
+      "Sal e ervas finas a gosto"
     ],
-    preparo: [
-      "Tempere o frango",
-      "Prepare os legumes",
-      "Misture e sirva"
+    modoPreparo: [
+      "Bata levemente os ovos numa tigela com um garfo e tempere com sal e ervas finas.",
+      "Despeje numa frigideira untada com um pouco de azeite em fogo baixo.",
+      "Adicione os espinafres e o queijo em metade da omelete.",
+      "Dobre ao meio, deixe o queijo derreter e sirva quente."
     ]
   },
-
-
   {
     id: 3,
-    nome: "Salada Completa Low Carb",
-    categoria: "Jantar",
-    tempo: "15 minutos",
-    descricao: "Uma refeição leve para sua rotina.",
-    ingredientes: [
-      "Folhas verdes",
-      "Ovos",
-      "Tomate",
-      "Azeite"
-    ],
-    preparo: [
-      "Lave os ingredientes",
-      "Monte a salada",
-      "Finalize com azeite"
-    ]
-  },
-
-
-  {
-    id: 4,
-    nome: "Panqueca Proteica",
+    titulo: "Salada Detox com Abacate",
     categoria: "Lanches",
-    tempo: "15 minutos",
-    descricao: "Lanche rápido e delicioso.",
+    tempo: "10 mins",
+    calorias: "180 kcal",
+    foto: "/marina/marina-cortando.jpg",
     ingredientes: [
-      "Ovos",
-      "Farinha de amêndoas",
-      "Queijo"
+      "1/2 abacate em cubos",
+      "Pepino fatiado finamente",
+      "Salsinha e cebolinha picadas",
+      "Sumo de limão, azeite e sal marinho"
     ],
-    preparo: [
-      "Misture os ingredientes",
-      "Prepare na frigideira"
-    ]
-  },
-
-
-  {
-    id: 5,
-    nome: "Mousse Low Carb",
-    categoria: "Sobremesas",
-    tempo: "20 minutos",
-    descricao: "Uma sobremesa com sabor especial.",
-    ingredientes: [
-      "Creme de leite",
-      "Cacau",
-      "Adoçante"
-    ],
-    preparo: [
-      "Misture os ingredientes",
-      "Leve para gelar"
+    modoPreparo: [
+      "Numa tigela funda, misture cuidadosamente os cubos de abacate e o pepino fatiado.",
+      "Polvilhe com a salsinha e a cebolinha picadas fresca.",
+      "Tempere com sal marinho, um toque generoso de sumo de limão e azeite extravirgem.",
+      "Sirva imediatamente bem fresco."
     ]
   }
-
 ];
-
-
-export default receitas;
