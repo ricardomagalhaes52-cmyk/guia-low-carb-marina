@@ -37,7 +37,7 @@ export default function Home() {
         </p>
       </header>
 
-      {/* FOTO DE DESTAQUE PRINCIPAL DA MARINA */}
+      {/* FOTO 1: Destaque Principal (Marina segurando o prato) */}
       <div
         style={{
           borderRadius: "18px",
@@ -48,7 +48,7 @@ export default function Home() {
         }}
       >
         <img
-          src="/marina/MARINA LOWCARB 1.jpg"
+          src="/marina/MARINA%20LOWCARB%201.jpg"
           alt="Marina Low Carb"
           style={{
             width: "100%",
@@ -67,7 +67,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* SEÇÃO ESCOLHA DA MARINA */}
+      {/* FOTO 4: Planeamento (Marina escrevendo no caderno) */}
       <section
         style={{
           backgroundColor: "#2D5A27",
@@ -80,7 +80,7 @@ export default function Home() {
         }}
       >
         <img
-          src="/marina/MARINA LOWCARB4.jpg"
+          src="/marina/MARINA%20LOWCARB4.jpg"
           alt="Marina Planejando"
           style={{
             width: "80px",
@@ -153,7 +153,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SEÇÃO RÁPIDAS DA MARINA COM FOTO */}
+      {/* FOTO 3: Rápidas da Marina (Marina cortando legumes) */}
       <section style={{ marginTop: "28px" }}>
         <h2
           style={{
@@ -177,7 +177,7 @@ export default function Home() {
           }}
         >
           <img
-            src="/marina/MARINA LOWCARB3.jpg"
+            src="/marina/MARINA%20LOWCARB3.jpg"
             alt="Marina Cozinhando"
             style={{
               width: "70px",
