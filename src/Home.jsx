@@ -50,47 +50,31 @@ export default function Home() {
         fontFamily: "Inter, sans-serif"
       }}
     >
-      {/* CABEÇALHO */}
-      <header style={{ marginBottom: "20px" }}>
-        <h1
-          style={{
-            fontFamily: "Poppins, sans-serif",
-            color: "#2C2C2C",
-            fontSize: "26px",
-            marginBottom: "8px"
-          }}
-        >
-          Olá, que bom ter você aqui! 🌿
-        </h1>
-        <p style={{ color: "#666666", fontSize: "15px" }}>
-          Vamos preparar algo delicioso e saudável hoje?
-        </p>
-      </header>
-
-      {/* DESTAQUE PRINCIPAL (Com fundo a condizer e imagem preenchendo elegantemente) */}
+      {/* CABEÇALHO COM A COZINHA/FOTO DE FUNDO EM DESTAQUE */}
       <div
         style={{
-          backgroundColor: "#2D5A27",
+          position: "relative",
           borderRadius: "20px",
           overflow: "hidden",
-          boxShadow: "0 6px 16px rgba(0,0,0,0.1)",
+          boxShadow: "0 6px 16px rgba(0,0,0,0.15)",
           marginBottom: "24px",
           color: "#FFFFFF",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          padding: "35px 20px",
           textAlign: "center",
-          padding: "20px"
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url('/marina/marina-cortando.jpg')`,
+          backgroundSize: "cover",
+          backgroundPosition: "center"
         }}
       >
         <div
           style={{
             width: "100%",
-            maxWidth: "280px",
-            borderRadius: "14px",
+            maxWidth: "200px",
+            borderRadius: "12px",
             overflow: "hidden",
-            marginBottom: "16px",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.2)"
+            margin: "0 auto 14px auto",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
+            border: "2px solid rgba(255,255,255,0.8)"
           }}
         >
           <img
@@ -104,28 +88,19 @@ export default function Home() {
           />
         </div>
 
-        <div>
-          <span
-            style={{
-              backgroundColor: "#A3D98E",
-              color: "#1E3D1A",
-              fontSize: "11px",
-              fontWeight: "bold",
-              padding: "4px 12px",
-              borderRadius: "10px",
-              display: "inline-block",
-              marginBottom: "8px"
-            }}
-          >
-            DESTAQUE DO DIA
-          </span>
-          <h3 style={{ fontFamily: "Poppins, sans-serif", fontSize: "20px", marginBottom: "6px" }}>
-            Receita Saudável com a Marina
-          </h3>
-          <p style={{ fontSize: "13px", opacity: 0.9, maxWidth: "300px", margin: "0 auto" }}>
-            Feita com carinho para manter a sua rotina leve, nutritiva e saborosa.
-          </p>
-        </div>
+        <h1
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            fontSize: "22px",
+            marginBottom: "6px",
+            color: "#FFFFFF"
+          }}
+        >
+          Olá, que bom ter você aqui! 🌿
+        </h1>
+        <p style={{ fontSize: "13px", opacity: 0.9, maxWidth: "300px", margin: "0 auto", lineHeight: "1.4" }}>
+          Vamos preparar receitas deliciosas, leves e saudáveis para a sua rotina.
+        </p>
       </div>
 
       {/* LISTA DE RECEITAS COM INGREDIENTES E MODO DE PREPARO */}
