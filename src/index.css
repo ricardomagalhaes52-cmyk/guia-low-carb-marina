@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+  --marina-green: #2D5A27;
+  --marina-sage: #7A9A74;
+  --marina-terracota: #D97757;
+  --marina-bg: #F9F8F6;
+  --marina-card: #FFFFFF;
+  --marina-text: #2C2C2C;
+  --marina-text-sec: #666666;
+  --marina-alert: #E06D53;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--marina-bg);
+  color: var(--marina-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--marina-text);
+}
+
+/* Botões Padrão Marina */
+.btn-marina-primary {
+  background-color: var(--marina-green);
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.btn-marina-primary:hover {
+  background-color: #23481f;
+}
+
+.btn-marina-secondary {
+  background-color: transparent;
+  color: var(--marina-green);
+  border: 1.5px solid var(--marina-green);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+
+.btn-marina-secondary:hover {
+  background-color: rgba(45, 90, 39, 0.05);
+}
+
+/* Cards Padrão Marina */
+.marina-card {
+  background-color: var(--marina-card);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
