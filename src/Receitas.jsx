@@ -1,43 +1,15 @@
-import ReceitaDetalhe from "./ReceitaDetalhe";
 import { useState } from "react";
+import receitas from "./receitasData";
+import ReceitaDetalhe from "./ReceitaDetalhe";
 
 export default function Receitas() {
 
-  const [receitaAberta, setReceitaAberta] = useState(false);
+  const [receitaSelecionada, setReceitaSelecionada] = useState(null);
 
 
-  if (receitaAberta) {
-    return <ReceitaDetalhe />;
+  if (receitaSelecionada) {
+    return <ReceitaDetalhe receita={receitaSelecionada} />;
   }
-
-
-  const categorias = [
-    {
-      emoji: "☕",
-      nome: "Café da manhã",
-      descricao: "Receitas leves para começar o dia"
-    },
-    {
-      emoji: "🍗",
-      nome: "Almoço",
-      descricao: "Pratos completos e saborosos"
-    },
-    {
-      emoji: "🥗",
-      nome: "Jantar",
-      descricao: "Opções práticas para sua rotina"
-    },
-    {
-      emoji: "🍎",
-      nome: "Lanches",
-      descricao: "Receitas rápidas"
-    },
-    {
-      emoji: "🍰",
-      nome: "Sobremesas",
-      descricao: "Doces low carb"
-    }
-  ];
 
 
   return (
@@ -65,90 +37,74 @@ export default function Receitas() {
           textAlign:"center"
         }}
       >
-        Escolha uma categoria ou veja uma receita.
+        Escolha uma receita preparada pela Marina.
       </p>
 
 
       <div
         style={{
-          background:"white",
-          padding:"20px",
-          borderRadius:"20px",
+          display:"grid",
+          gap:"18px",
           marginTop:"25px"
         }}
       >
 
-        <h2>
-          🍳 Omelete Cremoso Low Carb
-        </h2>
+        {receitas.map((receita) => (
 
-        <p>
-          ⏱ 10 minutos
-        </p>
+          <div
+            key={receita.id}
+            style={{
+              background:"white",
+              padding:"20px",
+              borderRadius:"20px",
+              boxShadow:"0 5px 15px rgba(0,0,0,0.08)"
+            }}
+          >
 
-        <p>
-          Uma receita prática para qualquer momento do dia.
-        </p>
-
-
-        <button
-          onClick={() => setReceitaAberta(true)}
-          style={{
-            background:"#45c451",
-            color:"white",
-            border:"none",
-            padding:"12px 25px",
-            borderRadius:"25px",
-            cursor:"pointer"
-          }}
-        >
-          Ver receita
-        </button>
-
-      </div>
+            <h2
+              style={{
+                color:"#245c3a"
+              }}
+            >
+              🍽️ {receita.nome}
+            </h2>
 
 
-
-      <h2
-        style={{
-          color:"#245c3a",
-          marginTop:"30px"
-        }}
-      >
-        Categorias
-      </h2>
+            <p>
+              📂 Categoria: {receita.categoria}
+            </p>
 
 
-      <div
-        style={{
-          display:"grid",
-          gap:"15px"
-        }}
-      >
+            <p>
+              ⏱️ Tempo: {receita.tempo}
+            </p>
 
-      {categorias.map((item)=>(
-        <div
-          key={item.nome}
-          style={{
-            background:"white",
-            padding:"18px",
-            borderRadius:"18px"
-          }}
-        >
 
-          <h2>
-            {item.emoji} {item.nome}
-          </h2>
+            <p>
+              {receita.descricao}
+            </p>
 
-          <p>
-            {item.descricao}
-          </p>
 
-        </div>
-      ))}
+            <button
+              onClick={() => setReceitaSelecionada(receita)}
+              style={{
+                background:"#45c451",
+                color:"white",
+                border:"none",
+                padding:"12px 25px",
+                borderRadius:"25px",
+                cursor:"pointer"
+              }}
+            >
+              Ver receita
+            </button>
+
+
+          </div>
+
+        ))}
 
       </div>
-
 
     </div>
   );
