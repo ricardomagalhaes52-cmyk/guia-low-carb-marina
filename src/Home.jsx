@@ -15,8 +15,8 @@ export default function Home() {
       ],
       modoPreparo: [
         "Tempere o filé de frango com sal, pimenta e um fio de azeite.",
-        "Grelhe em frigideira antiaderente até dourar por completo de ambos os lados.",
-        "Monte o prato com a base de folhas verdes, os tomates, o abacate fatiado e o frango fatiado por cima.",
+        "Grelhe em frigideira antiaderente até dourar de ambos os lados.",
+        "Monte o prato com a base de folhas verdes, tomates e abacate.",
         "Finalize regando com azeite e sumo de limão."
       ]
     },
@@ -32,10 +32,10 @@ export default function Home() {
         "Sal e ervas finas a gosto"
       ],
       modoPreparo: [
-        "Bata levemente os ovos numa tigela com um garfo e tempere com sal e ervas finas.",
-        "Despeje numa frigideira untada com um pouco de azeite em fogo baixo.",
-        "Adicione os espinafres e o queijo em metade da omelete.",
-        "Dobre ao meio, deixe o queijo derreter e sirva quente."
+        "Bata levemente os ovos com um garfo e tempere com ervas finas.",
+        "Despeje numa frigideira untada com azeite em fogo baixo.",
+        "Adicione os espinafres e o queijo numa metade e dobre ao meio.",
+        "Deixe o queijo derreter e sirva quente."
       ]
     }
   ];
@@ -44,46 +44,48 @@ export default function Home() {
     <div
       style={{
         minHeight: "100vh",
-        backgroundColor: "#F9F8F6",
-        padding: "20px",
+        backgroundColor: "#F4F1EA",
+        padding: "16px",
         paddingBottom: "100px",
-        fontFamily: "Inter, sans-serif"
+        fontFamily: "Inter, sans-serif",
+        maxWidth: "480px",
+        margin: "0 auto"
       }}
     >
-      {/* CABEÇALHO COM A COZINHA/FOTO DE FUNDO EM DESTAQUE */}
+      {/* CABEÇALHO COMPACTO MOBILE COM A COZINHA AO FUNDO */}
       <div
         style={{
           position: "relative",
           borderRadius: "20px",
           overflow: "hidden",
-          boxShadow: "0 6px 16px rgba(0,0,0,0.15)",
-          marginBottom: "24px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+          marginBottom: "20px",
           color: "#FFFFFF",
-          padding: "35px 20px",
+          padding: "24px 16px",
           textAlign: "center",
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url('/marina/marina-cortando.jpg')`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('/marina/marina-cortando.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
       >
         <div
           style={{
-            width: "100%",
-            maxWidth: "200px",
-            borderRadius: "12px",
+            width: "75px",
+            height: "75px",
+            borderRadius: "50%",
             overflow: "hidden",
-            margin: "0 auto 14px auto",
-            boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-            border: "2px solid rgba(255,255,255,0.8)"
+            margin: "0 auto 10px auto",
+            border: "2px solid #FFFFFF",
+            boxShadow: "0 4px 10px rgba(0,0,0,0.3)"
           }}
         >
           <img
             src="/marina/marina-principal.jpg"
-            alt="Marina Low Carb"
+            alt="Marina"
             style={{
               width: "100%",
-              height: "auto",
-              display: "block"
+              height: "100%",
+              objectFit: "cover"
             }}
           />
         </div>
@@ -91,22 +93,30 @@ export default function Home() {
         <h1
           style={{
             fontFamily: "Poppins, sans-serif",
-            fontSize: "22px",
-            marginBottom: "6px",
-            color: "#FFFFFF"
+            fontSize: "18px",
+            fontWeight: "bold",
+            marginBottom: "4px"
           }}
         >
-          Olá, que bom ter você aqui! 🌿
+          Olá, bem-vinda ao Guia! 🌿
         </h1>
-        <p style={{ fontSize: "13px", opacity: 0.9, maxWidth: "300px", margin: "0 auto", lineHeight: "1.4" }}>
-          Vamos preparar receitas deliciosas, leves e saudáveis para a sua rotina.
+        <p style={{ fontSize: "12px", opacity: 0.9, margin: 0 }}>
+          Receitas fáceis e saudáveis para o seu dia a dia.
         </p>
       </div>
 
-      {/* LISTA DE RECEITAS COM INGREDIENTES E MODO DE PREPARO */}
-      <section style={{ marginTop: "24px" }}>
-        <h2 style={{ fontFamily: "Poppins, sans-serif", fontSize: "20px", marginBottom: "15px", color: "#2C2C2C" }}>
-          Sugestões Práticas 🍳
+      {/* SECÇÃO DE SUGESTÕES */}
+      <section>
+        <h2
+          style={{
+            fontFamily: "Poppins, sans-serif",
+            fontSize: "16px",
+            color: "#2C2C2C",
+            marginBottom: "12px",
+            paddingLeft: "4px"
+          }}
+        >
+          Sugestões em Destaque 🍳
         </h2>
 
         {receitasDestaque.map((rec) => (
@@ -115,45 +125,46 @@ export default function Home() {
             style={{
               backgroundColor: "#FFFFFF",
               borderRadius: "16px",
-              padding: "16px",
-              marginBottom: "16px",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.04)"
+              padding: "14px",
+              marginBottom: "14px",
+              boxShadow: "0 2px 8px rgba(0,0,0,0.04)"
             }}
           >
+            {/* Cabeçalho do Card da Receita */}
             <div style={{ display: "flex", gap: "12px", alignItems: "center", marginBottom: "12px" }}>
               <img
                 src={rec.foto}
                 alt={rec.titulo}
-                style={{ width: "65px", height: "65px", borderRadius: "12px", objectFit: "cover" }}
+                style={{ width: "55px", height: "55px", borderRadius: "10px", objectFit: "cover" }}
               />
               <div>
-                <span style={{ fontSize: "11px", color: "#D35400", fontWeight: "bold" }}>⏱ {rec.tempo}</span>
-                <h4 style={{ fontFamily: "Poppins, sans-serif", fontSize: "15px", color: "#2C2C2C", margin: "2px 0" }}>
+                <span style={{ fontSize: "10px", color: "#D35400", fontWeight: "bold" }}>⏱ {rec.tempo}</span>
+                <h3 style={{ fontFamily: "Poppins, sans-serif", fontSize: "14px", color: "#2C2C2C", margin: "2px 0", lineHeight: "1.2" }}>
                   {rec.titulo}
-                </h4>
+                </h3>
               </div>
             </div>
 
-            {/* Ingredientes */}
-            <div style={{ backgroundColor: "#F9F8F6", padding: "12px", borderRadius: "10px", marginBottom: "10px" }}>
-              <strong style={{ fontSize: "13px", color: "#2D5A27", display: "block", marginBottom: "6px" }}>
+            {/* Ingredientes Compactos */}
+            <div style={{ backgroundColor: "#F9F8F6", padding: "10px", borderRadius: "8px", marginBottom: "8px" }}>
+              <span style={{ fontSize: "12px", color: "#2D5A27", fontWeight: "bold", display: "block", marginBottom: "4px" }}>
                 🛒 Ingredientes:
-              </strong>
-              <ul style={{ margin: 0, paddingLeft: "18px", fontSize: "12px", color: "#444444", lineHeight: "1.5" }}>
+              </span>
+              <ul style={{ margin: 0, paddingLeft: "16px", fontSize: "11px", color: "#444444", lineHeight: "1.4" }}>
                 {rec.ingredientes.map((ing, index) => (
                   <li key={index}>{ing}</li>
                 ))}
               </ul>
             </div>
 
-            {/* Modo de Preparo */}
-            <div style={{ backgroundColor: "#F9F8F6", padding: "12px", borderRadius: "10px" }}>
-              <strong style={{ fontSize: "13px", color: "#2D5A27", display: "block", marginBottom: "6px" }}>
+            {/* Modo de Preparo Compacto */}
+            <div style={{ backgroundColor: "#F9F8F6", padding: "10px", borderRadius: "8px" }}>
+              <span style={{ fontSize: "12px", color: "#2D5A27", fontWeight: "bold", display: "block", marginBottom: "4px" }}>
                 👨‍🍳 Modo de Preparo:
-              </strong>
-              <ol style={{ margin: 0, paddingLeft: "18px", fontSize: "12px", color: "#444444", lineHeight: "1.5" }}>
+              </span>
+              <ol style={{ margin: 0, paddingLeft: "16px", fontSize: "11px", color: "#444444", lineHeight: "1.4" }}>
                 {rec.modoPreparo.map((passo, index) => (
-                  <li key={index} style={{ marginBottom: "4px" }}>{passo}</li>
+                  <li key={index} style={{ marginBottom: "3px" }}>{passo}</li>
                 ))}
               </ol>
             </div>
