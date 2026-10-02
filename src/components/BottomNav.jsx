@@ -24,6 +24,11 @@ export function BottomNav({ activeTab, setActiveTab }) {
       icon: '🛒'
     },
     {
+      id: 'ebooks',
+      label: 'E-books',
+      icon: '📖'
+    },
+    {
       id: 'planejamento',
       label: 'Agenda',
       icon: '📅'
