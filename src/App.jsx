@@ -3,31 +3,28 @@ import Home from "./Home";
 import Receitas from "./Receitas";
 import Planejamento from "./Planejamento";
 import Compras from "./Compras";
-import EbooksView from "./EbooksView"; // Importação da tela de E-books
+import EbooksView from "./EbooksView"; 
 
 import { BottomNav } from "./components/BottomNav";
 
 export default function App() {
-  const [pagina, setPagina] = useState("home");
+  const [activeTab, setActiveTab] = useState("home");
 
   function renderPagina() {
-    if (pagina === "home") {
+    if (activeTab === "home") {
       return <Home />;
     }
-    if (pagina === "receitas") {
+    if (activeTab === "receitas") {
       return <Receitas />;
     }
-    if (pagina === "favoritos") {
-      // Adicione a tela de favoritos se houver, ou deixe tratato
-    }
-    if (pagina === "compras") {
+    if (activeTab === "compras") {
       return <Compras />;
     }
-    if (pagina === "agenda") {
+    if (activeTab === "planejamento" || activeTab === "agenda") {
       return <Planejamento />;
     }
-    if (pagina === "ebooks") {
-      return <EbooksView />; // Renderiza a tela de E-books quando selecionada
+    if (activeTab === "ebooks") {
+      return <EbooksView />;
     }
     return <Home />;
   }
@@ -35,7 +32,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 pb-24">
       {renderPagina()}
-      <BottomNav paginaAtual={pagina} setPagina={setPagina} />
+      <BottomNav activeTab={activeTab} setActiveTab={setActiveTab} />
     </div>
   );
 }
