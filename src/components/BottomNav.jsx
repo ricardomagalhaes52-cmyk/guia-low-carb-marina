@@ -10,23 +10,21 @@ export function BottomNav({ activeTab, setActiveTab }) {
     { id: 'planejamento', label: 'Agenda', icon: '📅' }
   ];
 
-  const navStyle = {
-    position: 'fixed',
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundColor: '#FFFFFF',
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    padding: '10px 0',
-    boxShadow: '0 -4px 12px rgba(0,0,0,0.05)',
-    borderTop: '1px solid rgba(0,0,0,0.04)',
-    zIndex: 1000
-  };
-
   return (
-    <nav style={navStyle}>
+    <nav style={{
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      right: 0,
+      backgroundColor: '#FFFFFF',
+      display: 'flex',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      padding: '10px 0',
+      boxShadow: '0 -4px 12px rgba(0,0,0,0.05)',
+      borderTop: '1px solid rgba(0,0,0,0.04)',
+      zIndex: 1000
+    }}>
       {navItems.map((item) => {
         const isActive = activeTab === item.id;
         return (
