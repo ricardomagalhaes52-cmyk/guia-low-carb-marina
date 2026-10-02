@@ -1,38 +1,13 @@
 import React from 'react';
 
 export function BottomNav({ activeTab, setActiveTab }) {
-
   const navItems = [
-    {
-      id: 'home',
-      label: 'Início',
-      icon: '🏠'
-    },
-    {
-      id: 'receitas',
-      label: 'Receitas',
-      icon: '🍲'
-    },
-    {
-      id: 'favoritos',
-      label: 'Favoritos',
-      icon: '❤️'
-    },
-    {
-      id: 'compras',
-      label: 'Compras',
-      icon: '🛒'
-    },
-    {
-      id: 'ebooks',
-      label: 'E-books',
-      icon: '📖'
-    },
-    {
-      id: 'planejamento',
-      label: 'Agenda',
-      icon: '📅'
-    }
+    { id: 'home', label: 'Início', icon: '🏠' },
+    { id: 'receitas', label: 'Receitas', icon: '🍲' },
+    { id: 'favoritos', label: 'Favoritos', icon: '❤️' },
+    { id: 'compras', label: 'Compras', icon: '🛒' },
+    { id: 'ebooks', label: 'E-books', icon: '📖' },
+    { id: 'planejamento', label: 'Agenda', icon: '📅' }
   ];
 
   const navStyle = {
@@ -53,9 +28,7 @@ export function BottomNav({ activeTab, setActiveTab }) {
   return (
     <nav style={navStyle}>
       {navItems.map((item) => {
-
         const isActive = activeTab === item.id;
-
         return (
           <button
             key={item.id}
@@ -75,17 +48,10 @@ export function BottomNav({ activeTab, setActiveTab }) {
               flex: 1
             }}
           >
-            <span style={{ fontSize: '20px' }}>
-              {item.icon}
-            </span>
-
-            <span>
-              {item.label}
-            </span>
-
+            <span style={{ fontSize: '20px' }}>{item.icon}</span>
+            <span>{item.label}</span>
           </button>
         );
-
       })}
     </nav>
   );
