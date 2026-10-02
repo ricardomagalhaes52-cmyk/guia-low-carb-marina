@@ -4,7 +4,6 @@ import Receitas from "./Receitas";
 import Planejamento from "./Planejamento";
 import Compras from "./Compras";
 import EbooksView from "./EbooksView"; 
-
 import { BottomNav } from "./components/BottomNav";
 
 export default function App() {
