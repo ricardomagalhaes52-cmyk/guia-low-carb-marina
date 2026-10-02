@@ -6,7 +6,6 @@ import Compras from "./Compras";
 import EbooksView from "./EbooksView"; 
 import { BottomNav } from "./components/BottomNav";
 
-
 export default function App() {
   const [activeTab, setActiveTab] = useState("home");
 
