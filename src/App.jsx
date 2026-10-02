@@ -1,11 +1,9 @@
 import { useState } from "react";
-
 import Home from "./Home";
 import Receitas from "./Receitas";
 import Planejamento from "./Planejamento";
 import Compras from "./Compras";
-// Se já tiver ou for criar o componente de favoritos, pode descomentar a linha abaixo:
-// import Favoritos from "./Favoritos";
+import EbooksView from "./EbooksView"; // Importação da tela de E-books
 
 import { BottomNav } from "./components/BottomNav";
 
@@ -13,37 +11,31 @@ export default function App() {
   const [pagina, setPagina] = useState("home");
 
   function renderPagina() {
+    if (pagina === "home") {
+      return <Home />;
+    }
     if (pagina === "receitas") {
       return <Receitas />;
     }
     if (pagina === "favoritos") {
-      // Se ainda não criou o arquivo Favoritos.jsx, podemos retornar um aviso temporário ou o componente
-      return (
-        <div style={{ padding: "20px", textAlign: "center" }}>
-          <h2>Meus Favoritos ❤️</h2>
-          <p>As suas receitas salvas aparecerão aqui em breve!</p>
-        </div>
-      );
-      // Quando criar o Favoritos.jsx, basta usar: return <Favoritos />;
-    }
-    if (pagina === "planejamento") {
-      return <Planejamento />;
+      // Adicione a tela de favoritos se houver, ou deixe tratato
     }
     if (pagina === "compras") {
       return <Compras />;
     }
-
+    if (pagina === "agenda") {
+      return <Planejamento />;
+    }
+    if (pagina === "ebooks") {
+      return <EbooksView />; // Renderiza a tela de E-books quando selecionada
+    }
     return <Home />;
   }
 
   return (
-    <div style={{ paddingBottom: "80px", minHeight: "100vh" }}>
+    <div className="min-h-screen bg-gray-50 pb-24">
       {renderPagina()}
-
-      <BottomNav
-        activeTab={pagina}
-        setActiveTab={setPagina}
-      />
+      <BottomNav paginaAtual={pagina} setPagina={setPagina} />
     </div>
   );
 }
