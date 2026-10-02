@@ -4,27 +4,29 @@ export function BottomNav({ activeTab, setActiveTab }) {
   const navItems = [
     { id: 'home', label: 'Início', icon: '🏠' },
     { id: 'receitas', label: 'Receitas', icon: '🍲' },
-    { id: 'favoritos', label: 'Favoritos', icon: '❤️' },
+    { id: 'favoritos', label: 'Favoritos', icon: '❤️️' },
     { id: 'compras', label: 'Compras', icon: '🛒' },
     { id: 'ebooks', label: 'E-books', icon: '📖' },
     { id: 'planejamento', label: 'Agenda', icon: '📅' }
   ];
 
+  const navStyle = {
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    backgroundColor: '#FFFFFF',
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    padding: '10px 0',
+    boxShadow: '0 -4px 12px rgba(0,0,0,0.05)',
+    borderTop: '1px solid rgba(0,0,0,0.04)',
+    zIndex: 1000
+  };
+
   return (
-    <nav style={{
-      position: 'fixed',
-      bottom: 0,
-      left: 0,
-      right: 0,
-      backgroundColor: '#FFFFFF',
-      display: 'flex',
-      justifyContent: 'space-around',
-      alignItems: 'center',
-      padding: '10px 0',
-      boxShadow: '0 -4px 12px rgba(0,0,0,0.05)',
-      borderTop: '1px solid rgba(0,0,0,0.04)',
-      zIndex: 1000
-    }}>
+    <nav style={navStyle}>
       {navItems.map((item) => {
         const isActive = activeTab === item.id;
         return (
